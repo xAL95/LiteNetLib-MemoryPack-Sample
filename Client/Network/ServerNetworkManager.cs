@@ -128,7 +128,7 @@ namespace Client.Network
 		/// <param name="disconnectInfo"></param>
 		void INetEventListener.OnPeerDisconnected(NetPeer peer, DisconnectInfo disconnectInfo)
 		{
-			Log.Write($"OnPeerDisconnected - Peer: {peer.Id}, DisconnectInfo: {disconnectInfo}");
+			Log.Write($"OnPeerDisconnected - Peer: {peer.Id}, DisconnectReason: {disconnectInfo.Reason}, SocketError: {disconnectInfo.SocketErrorCode}");
 
 			this.peer = null;
 		}

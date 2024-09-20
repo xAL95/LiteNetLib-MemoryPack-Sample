@@ -154,12 +154,12 @@ namespace Server.Network
 		/// <param name="peer"></param>
 		/// <param name="disconnectInfo"></param>
 		void INetEventListener.OnPeerDisconnected(NetPeer peer, DisconnectInfo disconnectInfo)
-		{
-            Log.Write($"OnPeerDisconnected - Peer: {peer.Id}, DisconnectInfo: {disconnectInfo}");
+        {
+            Log.Write($"OnPeerDisconnected - Peer: {peer.Id}, DisconnectReason: {disconnectInfo.Reason}, SocketError: {disconnectInfo.SocketErrorCode}");
 
-			// Remove from dictionary
+            // Remove from dictionary
 
-			peers.Remove(peer.Id);
+            peers.Remove(peer.Id);
         }
 
 		/// <summary>

@@ -1,5 +1,7 @@
 ﻿using Client.Network;
 using System.Globalization;
+using System;
+using System.Threading;
 
 namespace Client
 {
